@@ -24,6 +24,12 @@ namespace mercadopago {
 		private Hashtable access_data = null;
 		private bool sandbox = false;
 		
+		// Ensures TLS 1.2 
+		static MP()
+		{
+			System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+		}
+		
 		/**
 		 * Instantiate MP with credentials
 		 * @param client_id
